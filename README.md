@@ -1,6 +1,6 @@
 # Paper: a minimalist theme for Beeper Desktop
 
-A neutral, Claude-inspired custom CSS theme for Beeper Desktop. Warm-grey surfaces, outlined received messages, soft grey sent messages, and one terracotta accent for buttons, links and toggles. It follows your system's light or dark setting.
+A neutral, Claude-inspired custom CSS theme for Beeper Desktop. Neutral grey surfaces, outlined received messages, soft grey sent messages, and one terracotta accent for buttons, links and toggles. The palette uses the colour values claude.ai itself uses (neutral greys and the #d97757 accent). It follows your system's light or dark setting.
 
 ![Paper preview, light and dark](paper.png)
 

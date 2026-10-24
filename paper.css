@@ -5,42 +5,45 @@ After making your changes, type "Reload custom CSS" in the command bar
 To open dev tools, open the command bar and type "open console"
 
 Theme: Paper — minimalist, neutral, Claude-like. Light + dark (follows system).
+Colours are the values claude.ai itself uses (read from its stylesheet): neutral greys, accent #d97757.
 */
 
 :root:root {
-  --appearance-color-bg-primary: #f7f6f4;
-  --color-on-surface: #2b2a28;
-  --appearance-color-text-primary: #2b2a28;
+  --appearance-color-bg-primary: #ffffff;
+  --color-on-surface: #131313;
+  --appearance-color-text-primary: #131313;
   --appearance-color-bubble-in-bg: transparent;
-  --color-background-sidebar-opaque: #efeeeb;
-  --color-background-input: #fbfbfa;
-  --color-text-on-accent: #fffaf6;
-  --paper-accent: #b8664a;
-  --paper-out-bg: #e4e2de;
-  --paper-out-fg: #2b2a28;
-  --paper-bubble-in-border: #c9c6c0;
-  --paper-sidebar-bg: #efeeeb;
-  --paper-muted: #85827c;
-  --paper-scroll: rgba(43, 42, 40, 0.22);
-  --paper-scroll-hover: rgba(43, 42, 40, 0.4);
+  --color-background-sidebar-opaque: #f3f3f3;
+  --color-background-input: #ffffff;
+  --color-text-on-accent: #ffffff;
+  --paper-accent: #d97757;
+  --paper-accent-fill: #c6613f;
+  --paper-out-bg: #efefef;
+  --paper-out-fg: #131313;
+  --paper-bubble-in-border: rgba(30, 30, 30, 0.15);
+  --paper-sidebar-bg: #f3f3f3;
+  --paper-muted: #797979;
+  --paper-scroll: rgba(30, 30, 30, 0.22);
+  --paper-scroll-hover: rgba(30, 30, 30, 0.4);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:root {
-    --appearance-color-bg-primary: #1f1e1c;
-    --color-on-surface: #e8e6e1;
-    --appearance-color-text-primary: #e8e6e1;
-    --color-background-sidebar-opaque: #191816;
-    --color-background-input: #242321;
-    --color-text-on-accent: #1f1e1c;
-    --paper-accent: #d08a6c;
-    --paper-out-bg: #2c2b28;
-    --paper-out-fg: #e8e6e1;
-    --paper-bubble-in-border: #4a4843;
-    --paper-sidebar-bg: #191816;
-    --paper-muted: #8f8c85;
-    --paper-scroll: rgba(232, 230, 225, 0.22);
-    --paper-scroll-hover: rgba(232, 230, 225, 0.4);
+    --appearance-color-bg-primary: #151515;
+    --color-on-surface: #f9f9f9;
+    --appearance-color-text-primary: #f9f9f9;
+    --color-background-sidebar-opaque: #111111;
+    --color-background-input: #202020;
+    --color-text-on-accent: #ffffff;
+    --paper-accent: #d97757;
+    --paper-accent-fill: #d97757;
+    --paper-out-bg: #202020;
+    --paper-out-fg: #f9f9f9;
+    --paper-bubble-in-border: rgba(249, 249, 249, 0.16);
+    --paper-sidebar-bg: #111111;
+    --paper-muted: #959595;
+    --paper-scroll: rgba(249, 249, 249, 0.22);
+    --paper-scroll-hover: rgba(249, 249, 249, 0.4);
   }
 }
 
@@ -51,9 +54,9 @@ Theme: Paper — minimalist, neutral, Claude-like. Light + dark (follows system)
 :root:root body * {
   --color-primary: var(--paper-accent) !important;
   --color-brand: var(--paper-accent) !important;
-  --color-background-button-primary: var(--paper-accent) !important;
-  --checkbox-style-bg-selected: var(--paper-accent) !important;
-  --toggle-style-knob-on: var(--paper-accent) !important;
+  --color-background-button-primary: var(--paper-accent-fill) !important;
+  --checkbox-style-bg-selected: var(--paper-accent-fill) !important;
+  --toggle-style-knob-on: var(--paper-accent-fill) !important;
   --app-focus-ring: var(--paper-accent) !important;
   --chat-view-bubble-radius: 16px !important;
   --color-background-scrollbar: var(--paper-scroll) !important;
@@ -90,7 +93,7 @@ Theme: Paper — minimalist, neutral, Claude-like. Light + dark (follows system)
 .ComposeMessage-module__input {
   background: var(--color-background-input);
   border: 1px solid var(--paper-bubble-in-border);
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
 .ComposeMessage-module__input:has(.ProseMirror-focused) {
