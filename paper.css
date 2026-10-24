@@ -1,0 +1,109 @@
+/*
+# Custom Beeper.app style
+This file will be injected as a <style> tag
+After making your changes, type "Reload custom CSS" in the command bar
+To open dev tools, open the command bar and type "open console"
+
+Theme: Paper — minimalist, neutral, Claude-like. Light + dark (follows system).
+*/
+
+:root:root {
+  --appearance-color-bg-primary: #f7f6f4;
+  --color-on-surface: #2b2a28;
+  --appearance-color-text-primary: #2b2a28;
+  --appearance-color-bubble-in-bg: transparent;
+  --color-background-sidebar-opaque: #efeeeb;
+  --color-background-input: #fbfbfa;
+  --color-text-on-accent: #fffaf6;
+  --paper-accent: #b8664a;
+  --paper-out-bg: #e4e2de;
+  --paper-out-fg: #2b2a28;
+  --paper-bubble-in-border: #c9c6c0;
+  --paper-sidebar-bg: #efeeeb;
+  --paper-muted: #85827c;
+  --paper-scroll: rgba(43, 42, 40, 0.22);
+  --paper-scroll-hover: rgba(43, 42, 40, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:root {
+    --appearance-color-bg-primary: #1f1e1c;
+    --color-on-surface: #e8e6e1;
+    --appearance-color-text-primary: #e8e6e1;
+    --color-background-sidebar-opaque: #191816;
+    --color-background-input: #242321;
+    --color-text-on-accent: #1f1e1c;
+    --paper-accent: #d08a6c;
+    --paper-out-bg: #2c2b28;
+    --paper-out-fg: #e8e6e1;
+    --paper-bubble-in-border: #4a4843;
+    --paper-sidebar-bg: #191816;
+    --paper-muted: #8f8c85;
+    --paper-scroll: rgba(232, 230, 225, 0.22);
+    --paper-scroll-hover: rgba(232, 230, 225, 0.4);
+  }
+}
+
+/* Accent, corner radius and scrollbars.
+   Applied on every element with !important so it wins wherever Beeper sets these. */
+:root:root,
+:root:root body,
+:root:root body * {
+  --color-primary: var(--paper-accent) !important;
+  --color-brand: var(--paper-accent) !important;
+  --color-background-button-primary: var(--paper-accent) !important;
+  --checkbox-style-bg-selected: var(--paper-accent) !important;
+  --toggle-style-knob-on: var(--paper-accent) !important;
+  --app-focus-ring: var(--paper-accent) !important;
+  --chat-view-bubble-radius: 16px !important;
+  --color-background-scrollbar: var(--paper-scroll) !important;
+  --color-background-scrollbar-hover: var(--paper-scroll-hover) !important;
+}
+
+/* Sent messages and quoted sent messages: set the colours where Beeper reads them */
+.MessageContent-module__contents.MessageContent-module__isSender,
+.LinkedMessage-module__linkedMessage.LinkedMessage-module__isSender,
+.LinkedMessage-module__isSender {
+  --bubble-out-bg: var(--paper-out-bg);
+  --bubble-out-fg: var(--paper-out-fg);
+  --bubble-out-quote-fg: var(--paper-out-fg);
+}
+
+/* Messages: slightly more generous line spacing */
+.MessageContent-module__contents {
+  line-height: 1.55;
+}
+
+/* Received messages: transparent with a thin outline */
+.MessageContent-module__contents:not(.MessageContent-module__isSender) {
+  background: transparent;
+  border: 1px solid var(--paper-bubble-in-border);
+}
+
+/* Sender names in group chats: one quiet neutral instead of per-person colours */
+.MessageSender-module__senderName {
+  color: var(--paper-muted) !important;
+  font-weight: 500;
+}
+
+/* Composer: a rounded card with a hairline border, like Claude's input */
+.ComposeMessage-module__input {
+  background: var(--color-background-input);
+  border: 1px solid var(--paper-bubble-in-border);
+  border-radius: 16px;
+}
+
+.ComposeMessage-module__input:has(.ProseMirror-focused) {
+  border-color: color-mix(in srgb, var(--paper-accent) 55%, transparent);
+}
+
+/* Account badge dot: terracotta accent */
+[class*="AccountBadge-module__dot"] {
+  background: var(--paper-accent);
+}
+
+/* Sidebar, top bar and other windows: replace Beeper's blue gradient with a flat neutral */
+html body {
+  background-image: none !important;
+  background-color: var(--paper-sidebar-bg) !important;
+}
